@@ -1,17 +1,16 @@
-//import React from 'react'
-
-import NavBar from "./Components/NavBar"
-
-
+import Footer from "./Components/Footer";
+import NavBar from "./Components/NavBar";
+import BackToTopButton from "./Components/backtotop";
 function App() {
 
+
   return (
-    <>
-    <div className=" bg-slate-50">
-     <NavBar/>
-     </div>
-    </>
-  )
+ <div style={{ overflowY: 'auto', height: '100vh' }}>
+      <NavBar />
+      <Footer />     
+      <BackToTopButton/> 
+    </div>
+  );
 }
 
-export default App
+export default App;
