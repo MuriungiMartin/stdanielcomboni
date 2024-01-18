@@ -31,7 +31,7 @@ const BackToTopButton = () => {
                 bottom: '20px',
                 right: '20px',
                 zIndex: '99',
-                backgroundColor: 'green',
+                backgroundColor: 'purple',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '50%',

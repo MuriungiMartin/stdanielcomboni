@@ -26,8 +26,8 @@ const LandingPage = () => {
     },
     // Add more events as needed
   ];
-  const groups = ["Group 1", "Group 2", "Group 3"]; // Replace with your own groups
-  const testimonials = ["Testimonial 1", "Testimonial 2", "Testimonial 3"]; // Replace with your own testimonials
+//   const groups = ["Group 1", "Group 2", "Group 3"]; // Replace with your own groups
+//   const testimonials = ["Testimonial 1", "Testimonial 2", "Testimonial 3"]; // Replace with your own testimonials
 
   return (
     <div className="bg-gradient-to-b from-purple-100 to-white pt-12">
