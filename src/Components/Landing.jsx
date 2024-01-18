@@ -30,8 +30,8 @@ const LandingPage = () => {
   const testimonials = ["Testimonial 1", "Testimonial 2", "Testimonial 3"]; // Replace with your own testimonials
 
   return (
-    <div className="bg-gradient-to-b from-purple-100 to-white">
-      <section className="flex flex-col justify-around items-center p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10 text-black bg-gradient-to-b from-purple-200 to-purple-100">
+    <div className="bg-gradient-to-b from-purple-100 to-white pt-12">
+      <section className="flex flex-col justify-around items-center p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10 text-black bg-gradient-to-b from-purple-200 to-purple-100 ">
         <div className="lg:w-1/3 sm:w-fit pt-16">
           <h1 className="text-6xl">St Daniel Comboni Parish</h1>
 
@@ -64,7 +64,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-white to-purple-50 text-black p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10">
+      <section className="bg-white text-black p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10">
         <div className="flex flex-col col-span-2 items-center justify-center gap-2 mr-16">
           <h1 className="text-3xl font-bold font-serif">Upcoming Events</h1>
           {/* <h4>
@@ -72,11 +72,11 @@ const LandingPage = () => {
             eiusmod tempor incididunt ut seedor labore. Excepteur sint occaecat.
           </h4> */}
         </div>
-        <div className="flex flex-col  space-y-4 p-12">
+        <div className="flex flex-col  space-y-4  p-12">
           {events.map((event, index) => (
             <div key={index} className="flex">
               <div className="w-1/4 text-right px-4 pt-8">
-                <div className="inline-block w-3 h-3 rounded-full bg-orange-500"></div>
+                <div className="inline-block w-3 h-3 rounded-full bg-purple-500"></div>
               </div>
               <div className="w-1/4 p-4">
                 <div className="font-bold">{event.date}</div>
@@ -105,29 +105,10 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <div className="text-center">
-        <h2 className="text-2xl font-bold mb-4">Church Groups</h2>
-        {groups.map((group, index) => (
-          <p
-            key={index}
-            className={`text-xl ${isLoaded ? "animate-slide-up" : ""}`}
-          >
-            {group}
-          </p>
-        ))}
-      </div>
-
-      <div className="text-center">
-        <h2 className="text-2xl font-bold mb-4">Testimonials</h2>
-        {testimonials.map((testimonial, index) => (
-          <p
-            key={index}
-            className={`text-xl ${isLoaded ? "animate-slide-up" : ""}`}
-          >
-            {testimonial}
-          </p>
-        ))}
-      </div>
+      <section className="h-96 text-center bg-gradient-to-b flex flex-row items-center justify-between from-indigo-900 to-purple-900 text-white p-8">
+        <div>
+        </div>
+      </section>
     </div>
   );
 };

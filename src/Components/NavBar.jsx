@@ -52,7 +52,7 @@ const NavBar = () => {
                 <img
                   src={logoImage}
                   alt="Church Logo"
-                  className="h-10 w-10   sm:h-12 sm:w-12 mt-4 sm:mt-0  mr-8"
+                  className="h-10 w-10  rounded-full  sm:h-12 sm:w-12 mt-4 sm:mt-0  mr-8"
                 />
               </span>
               {/* <span className="text-2xl font-semibold px-8">St Daniel Comboni Parish</span> */}
