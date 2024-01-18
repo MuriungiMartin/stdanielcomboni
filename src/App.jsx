@@ -1,14 +1,10 @@
-import Footer from "./Components/Footer";
-import NavBar from "./Components/NavBar";
-import BackToTopButton from "./Components/backtotop";
+import Main from "./Components/main";
 function App() {
 
 
   return (
- <div style={{ overflowY: 'auto', height: '100vh' }}>
-      <NavBar />
-      <Footer />     
-      <BackToTopButton/> 
+ <div>
+      <Main />
     </div>
   );
 }
