@@ -46,24 +46,20 @@ const LandingPage = () => {
   ];
   const sections = [
     {
-      title: "Our Mission",
-      description:
-        "Our mission is what we do. The avenue we're here is invite God's progress through gracious innovations.",
+      title: 'Our Mission',
+      description: 'Our mission is what we do. The active verb here is invite: God progresses through gracious invitations.',
     },
     {
-      title: "Our Vision",
-      description:
-        "We see our mission as expanding God's kingdom and we seek to help every member find their place.",
+      title: 'Our Vision',
+      description: 'We see our mission as extending God\'s Kingdom and we seek to help every member find their place.',
     },
     {
-      title: "Our Values",
-      description:
-        "Community is where we most deeply experience God’s love and grace throughout all stages of life.",
+      title: 'Our Values',
+      description: 'Community is where we most deeply experience God\'s love and grace throughout all stages of life.',
     },
     {
-      title: "Our Faith",
-      description:
-        "All peoples are of tremendous value to God! Reaching them with the Gospel is our direct responsibility.",
+      title: 'Our Faith',
+      description: 'All Peoples are of tremendous value to God; reaching them with the Gospel is our distinct responsibility.',
     },
     // Add more sections as needed
   ];
@@ -204,11 +200,22 @@ const LandingPage = () => {
         </div>
         <div className=" flex flex-col justify-around items-center p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10 ">
           <div className="lg:w-1/3 md:w/3 sm:w-fit p-16">
-            
+
           </div>
           <div className="lg:w-1/3 md:w/3 sm:w-fit p-16">2</div>
         </div>
       </section>
+      <div className="container mx-auto p-4 md:p-0">
+      {sections.map((section, index) => (
+        <div key={index} className="mb-4">
+          <div className="flex items-center mb-2">
+            <div className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-full mr-4">{index + 1}</div>
+            <h3 className="text-xl font-bold text-white">{section.title}</h3>
+          </div>
+          <p className="text-gray-400">{section.description}</p>
+        </div>
+      ))}
+    </div>
     </div>
   );
 };
