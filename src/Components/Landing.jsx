@@ -196,7 +196,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className=" bg-slate-50 border-separate py-8  mx-auto space-x-4 md:space-x-10 font-sans">
+      <section className=" bg-slate-100 border-separate py-8  mx-auto space-x-4 md:space-x-10 font-sans">
         <div className="flex items-center justify-center ">
           <h2 className=" text-3xl font-bold mb-4"> WE BELIEVE IN GOD.
           </h2>
@@ -222,6 +222,8 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
+      <section className="bg-gradient-to-b  border-t-2 border-transparent from-yellow-50 to-white border-separate py-8  mx-auto space-x-4 md:space-x-10 font-sans h-96">
+        </section>
     </div>
   );
 };
