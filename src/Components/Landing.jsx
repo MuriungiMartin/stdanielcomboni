@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 
 const LandingPage = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsLoaded(true);
+  // }, []);
 
   //const images = ["1.jpg", "2.jpeg", "3.jpeg"]; // Replace with your own images
   // const events = ["Event 1", "Event 2", "Event 3"]; // Replace with your own events
@@ -46,20 +46,24 @@ const LandingPage = () => {
   ];
   const sections = [
     {
-      title: 'Our Mission',
-      description: 'Our mission is what we do. The active verb here is invite: God progresses through gracious invitations.',
+      title: "Our Mission",
+      description:
+        "Our mission is what we do. The active verb here is invite: God progresses through gracious invitations.",
     },
     {
-      title: 'Our Vision',
-      description: 'We see our mission as extending God\'s Kingdom and we seek to help every member find their place.',
+      title: "Our Vision",
+      description:
+        "We see our mission as extending God's Kingdom and we seek to help every member find their place.",
     },
     {
-      title: 'Our Values',
-      description: 'Community is where we most deeply experience God\'s love and grace throughout all stages of life.',
+      title: "Our Values",
+      description:
+        "Community is where we most deeply experience God's love and grace throughout all stages of life.",
     },
     {
-      title: 'Our Faith',
-      description: 'All Peoples are of tremendous value to God; reaching them with the Gospel is our distinct responsibility.',
+      title: "Our Faith",
+      description:
+        "All Peoples are of tremendous value to God; reaching them with the Gospel is our distinct responsibility.",
     },
     // Add more sections as needed
   ];
@@ -194,28 +198,30 @@ const LandingPage = () => {
 
       <section className=" bg-slate-50 border-separate py-8  mx-auto space-x-4 md:space-x-10 font-sans">
         <div className="flex items-center justify-center ">
-          <h2 className=" text-2xl font-bold mb-4">
-            WE LOVE GOD. WE BELIEVE IN GOD.
+          <h2 className=" text-3xl font-bold mb-4"> WE BELIEVE IN GOD.
           </h2>
         </div>
         <div className=" flex flex-col justify-around items-center p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10 ">
-          <div className="lg:w-1/3 md:w/3 sm:w-fit p-16">
-
+          <div className="lg:w-1/3 md:w/3 sm:w-fit p-4">
+            {sections.map((section, index) => (
+              <div key={index} className="mb-4">
+                <div className="flex items-center mb-2">
+                  <div className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-full mr-4">
+                    {index + 1}
+                  </div>
+                  <h3 className="text-xl font-bold text-black">
+                    {section.title}
+                  </h3>
+                </div>
+                <p className="text-black">{section.description}</p>
+              </div>
+            ))}
           </div>
-          <div className="lg:w-1/3 md:w/3 sm:w-fit p-16">2</div>
+          <div className="lg:w-1/3 md:w/3 sm:w-fit py-4">
+            <img src= "euch.jpg" alt="img Logo" width={320} height={320} className="rounded-sm  sm:mt-8 sm:mb-8 sm:w-fit sm:h-fit sm:mx-auto sm:shadow-xl sm:ring-4 sm:ring-purple-200 sm:ring-opacity-50 sm:ring-offset-4 sm:ring-offset-purple-200 sm:ring-offset-opacity-50" />
+          </div>
         </div>
       </section>
-      <div className="container mx-auto p-4 md:p-0">
-      {sections.map((section, index) => (
-        <div key={index} className="mb-4">
-          <div className="flex items-center mb-2">
-            <div className="w-8 h-8 flex items-center justify-center bg-black text-white rounded-full mr-4">{index + 1}</div>
-            <h3 className="text-xl font-bold text-white">{section.title}</h3>
-          </div>
-          <p className="text-gray-400">{section.description}</p>
-        </div>
-      ))}
-    </div>
     </div>
   );
 };
