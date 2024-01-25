@@ -3,7 +3,7 @@ import logoImage from "../assets/combonilogo.jpg";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="py-16">
       <div className="flex flex-col md:flex-row justify-between text-white p-4 md:p-12 bg-gradient-to-b from-black to-slate-800">
         <div className="mb-4 md:mb-0 text-left md:text-center">
           <span className="flex items-start justify-start px-2 py-4 gap-8 pb-8">

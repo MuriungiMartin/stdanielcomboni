@@ -1,15 +1,14 @@
-// NavBar.jsx
-
 import React from "react";
 import { Link } from "react-scroll";
 import { FaTimes } from "react-icons/fa";
 import { CiMenuFries } from "react-icons/ci";
 import logoImage from "../assets/combonilogo.jpg";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./Landing";
+import Communications from "./Communications";
 const NavBar = () => {
   const [click, setClick] = React.useState(false);
   const handleClick = () => setClick(!click);
-
   const content = (
     <div className="bg-gradient-to-b from-purple-50 to-white lg:hidden block absolute top-16 w-full left-0 right-0  transition pt-200">
       <ul className="text-center text-xl p-20">
@@ -41,11 +40,10 @@ const NavBar = () => {
       </ul>
     </div>
   );
-
   return (
-    // <nav className="bg-gray-200 fixed top-0 w-full rounded-3xl my-10 mx-10">
     <>
-      <nav className=" bg-gradient-to-b from-white to-purple-100 items-start  fixed top-0 w-full  border-b border-slate-200">
+      <BrowserRouter>
+        <nav className=" bg-gradient-to-b from-white to-purple-100 items-start  fixed top-0 w-full  border-b border-slate-200">
           <div className=" flex items-start justify-start z-50 text-black lg:py-5 px-20 py-4 mx-4">
             <div className="flex items-center flex-1">
               <span>
@@ -65,11 +63,12 @@ const NavBar = () => {
                       Home
                     </li>
                   </Link>
-                  <Link spy={true} smooth={true} to="Communications">
-                    <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
+                  <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
+                    <Link spy={true} smooth={true} to="Communications">
                       Communications
-                    </li>
-                  </Link>
+                    </Link>
+                  </li>
+
                   <Link spy={true} smooth={true} to="Events">
                     <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
                       Events
@@ -103,10 +102,13 @@ const NavBar = () => {
               {click ? <FaTimes /> : <CiMenuFries />}
             </button>
           </div>
-
-      </nav>
+        </nav>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/Communications" element={<Communications />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
-
 export default NavBar;
