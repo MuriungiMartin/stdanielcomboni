@@ -70,8 +70,90 @@ const LandingPage = () => {
     },
     // Add more sections as needed
   ];
-  //   const groups = ["Group 1", "Group 2", "Group 3"]; // Replace with your own groups
-  //   const testimonials = ["Testimonial 1", "Testimonial 2", "Testimonial 3"]; // Replace with your own testimonials
+  //Order of Mass
+  const mass = [
+    {
+      id: 1,
+      day: "Sunday",
+      time: "7:00 AM",
+      title: "English Mass",
+      description:
+        "Join us for a special Lenten Prayer Vigil as we seek spiritual growth and reflection during the season of Lent.",
+      image: "./1.jpg",
+    },
+    {
+      id: 2,
+      day: "Sunday",
+      time: "9:00 AM",
+      title: "Swahili Mass",
+      description:
+        "Celebrate the Sunday Mass in Swahili language with the community.",
+      image: "./4.jpeg",
+    },
+    {
+      id: 3,
+      day: "Sunday",
+      time: "11:00 AM",
+      title: "English Mass",
+      description:
+        "Celebrate the Sunday Mass in English language with the community.",
+      image: "./4.jpeg",
+    },
+    {
+      id: 4,
+      day: "Monday",
+      time: "6:00 AM",
+      title: "Swahili Mass",
+      description:
+        "Celebrate the Monday Mass in Swahili language with the community.",
+      image: "./4.jpeg",
+    },
+    {
+      id: 5,
+      day: "Tuesday",
+      time: "6:00 AM",
+      title: "English Mass",
+      description:
+        "Celebrate the Tuesday Mass in English language with the community.",
+      image: "./4.jpeg",
+    },
+    {
+      id: 6,
+      day: "Wednesday",
+      time: "6:00 AM",
+      title: "Swahili Mass",
+      description:
+        "Celebrate the Wednesday Mass in Swahili language with the community.",
+      image: "./4.jpeg",
+    },
+    {
+      id: 7,
+      day: "Thursday",
+      time: "",
+      title: "English Mass",
+      description:
+        "Celebrate the Thursday Mass in English language with the community.",
+      image: "./4.jpeg",
+    },
+    {
+      id: 8,
+      day: "Friday",
+      time: "6:00 AM",
+      title: "Swahili Mass",
+      description:
+        "Celebrate the Friday Mass in Swahili language with the community.",
+      image: "./4.jpeg",
+    },
+    {
+      id: 9,
+      day: "Saturday",
+      time: "6:00 AM",
+      title: "English Mass",
+      description:
+        "Celebrate the Saturday Mass in English language with the community.",
+      image: "./4.jpeg",
+    },
+  ];
 
   return (
     <div className="bg-gradient-to-b from-purple-100 to-white pt-12">
@@ -217,7 +299,36 @@ const LandingPage = () => {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-b  border-t-2 border-transparent from-yellow-50 to-white border-separate py-8  mx-auto space-x-4 md:space-x-10 font-sans h-96"></section>
+      <section className="bg-gradient-to-b  border-t-2 border-transparent from-yellow-50 to-white border-separate py-8  mx-auto space-x-4 md:space-x-10 font-sans">
+        {/*Mass Schedule*/}
+        <div className="container mx-auto py-8 px-4">
+          <h2 className="text-2xl font-bold mb-4">Mass Schedule</h2>
+
+          <div className="grid grid-cols-1 gap-4">
+            {mass.map((massItem) => (
+              <div
+                key={massItem.id}
+                className="bg-white p-4 shadow-md rounded-md"
+              >
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold">{massItem.title}</h3>
+                    <p>
+                      {massItem.day}, {massItem.time}
+                    </p>
+                  </div>
+                  <img
+                    src={massItem.image}
+                    alt={massItem.title}
+                    className="w-16 h-16 object-cover rounded-md"
+                  />
+                </div>
+                <p className="mt-2">{massItem.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
