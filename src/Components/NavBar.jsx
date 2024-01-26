@@ -46,9 +46,9 @@ const NavBar = () => {
   return (
     <>
       <BrowserRouter>
-        <nav className=" bg-gradient-to-b from-white to-purple-100 items-start  fixed top-0 w-full  border-b border-slate-200">
+        <nav className=" bg-gradient-to-b from-white to-purple-100 items-start  fixed top-0 w-full sm:pt-0 sm:mt-0 border-b border-slate-200">
           <div className=" flex items-start justify-start z-50 text-black lg:py-5 px-20 py-4 mx-4">
-            <div className="flex items-center flex-1">
+            <div className="flex items-center flex-1 sm:pt-0">
               <span>
                 <img
                   src={logoImage}
