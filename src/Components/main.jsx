@@ -5,7 +5,6 @@ const main = () => {
     return (
         <div className="overflow-x-hidden">
             <NavBar />
-            
             <Footer />
             <BackToTopButton/>
         </div>

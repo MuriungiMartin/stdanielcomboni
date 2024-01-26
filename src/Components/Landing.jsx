@@ -11,21 +11,24 @@ const LandingPage = () => {
   // const events = ["Event 1", "Event 2", "Event 3"]; // Replace with your own events
   const events = [
     {
-      date: "16 MAY 2019",
+      date: "16 FEB 2024",
       time: "THU 21:30",
-      title: "Event 1",
-      description: "Description 1",
+      title: "Lenten Prayer Vigil",
+      description:
+        "Join us for a special Lenten Prayer Vigil as we seek spiritual growth and reflection during the season of Lent.",
       image: "./1.jpg",
     },
     {
-      date: "24 MAR 2020",
+      date: "24 MAR 2024",
       time: "TUE 18:00",
-      title: "Event 2",
-      description: "Description 2",
+      title: "Parish Feast Day Celebration",
+      description:
+        "Celebrate our parish feast day with a joyous gathering. Join in prayer, fellowship, and festivities.",
       image: "./2.jpeg",
     },
     // Add more events as needed
   ];
+
   const blogs = [
     {
       title: "Are You Open to Spiritual Gifts?",
@@ -105,40 +108,27 @@ const LandingPage = () => {
       </section>
 
       <section className="bg-white text-black p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10">
-        <div className="flex flex-col col-span-2 items-center justify-center gap-2 mr-16">
-          <h1 className="text-3xl font-bold font-serif">Upcoming Events</h1>
-          {/* <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut seedor labore. Excepteur sint occaecat.
-          </h4> */}
-        </div>
-        <div className="flex flex-col  space-y-4  p-12">
+        <div className="flex flex-col space-y-4 p-4 sm:p-0">
           {events.map((event, index) => (
-            <div key={index} className="flex">
-              <div className="w-1/4 text-right px-4 pt-8">
+            <div
+              key={index}
+              className="flex flex-col sm:flex-row items-stretch"
+            >
+              <div className="w-full sm:w-1/4 text-center sm:text-right px-4 pt-8">
                 <div className="inline-block w-3 h-3 rounded-full bg-purple-500"></div>
               </div>
-              <div className="w-1/4 p-4">
+              <div className="w-full sm:w-1/4 p-4">
                 <div className="font-bold">{event.date}</div>
                 <div>{event.time}</div>
               </div>
-              <div className="w-3/4 p-4 bg-white border rounded-md">
+              <div className="w-full sm:w-3/4 p-4 bg-white border rounded-md shadow-2xl">
                 <h3 className="text-2xl font-bold mb-4 pl-4">{event.title}</h3>
                 <p className="pl-4">{event.description}</p>
                 <div className="pl-4">
-                  <button className="bg-gradient-to-r  from-purple-600 to-purple-200 text-white px-4 py-2 rounded mt-8 hover:bg-gradient-to-l hover:from-white hover:to-purple-950">
+                  <button className="bg-gradient-to-r from-purple-600 to-purple-200 text-white px-4 py-2 rounded mt-8 hover:bg-gradient-to-l hover:from-white hover:to-purple-950">
                     View Event
                   </button>
                 </div>
-                {/* <div className="w-1/4 justify-end col-span-4">
-                <img
-                  src={event.image}
-                  alt="Church Logo"
-                  width={320}
-                  height={320}
-                  className="rounded-full border-8 border-white sm:mt-8 sm:mb-8 sm:w-fit sm:h-fit sm:mx-auto sm:shadow-xl sm:ring-4 sm:ring-purple-200 sm:ring-opacity-50 sm:ring-offset-4 sm:ring-offset-purple-200 sm:ring-offset-opacity-50"
-                />
-                </div> */}
               </div>
             </div>
           ))}
@@ -198,8 +188,7 @@ const LandingPage = () => {
 
       <section className=" bg-slate-100 border-separate py-8  mx-auto space-x-4 md:space-x-10 font-sans">
         <div className="flex items-center justify-center ">
-          <h2 className=" text-3xl font-bold mb-4"> WE BELIEVE IN GOD.
-          </h2>
+          <h2 className=" text-3xl font-bold mb-4"> WE BELIEVE IN GOD.</h2>
         </div>
         <div className=" flex flex-col justify-around items-center p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10 ">
           <div className="lg:w-1/3 md:w/3 sm:w-fit p-4">
@@ -218,12 +207,17 @@ const LandingPage = () => {
             ))}
           </div>
           <div className="lg:w-1/3 md:w/3 sm:w-fit py-4">
-            <img src= "euch.jpg" alt="img Logo" width={320} height={320} className="rounded-sm  sm:mt-8 sm:mb-8 sm:w-fit sm:h-fit sm:mx-auto sm:shadow-xl sm:ring-4 sm:ring-purple-200 sm:ring-opacity-50 sm:ring-offset-4 sm:ring-offset-purple-200 sm:ring-offset-opacity-50" />
+            <img
+              src="euch.jpg"
+              alt="img Logo"
+              width={320}
+              height={320}
+              className="rounded-sm  sm:mt-8 sm:mb-8 sm:w-fit sm:h-fit sm:mx-auto sm:shadow-xl sm:ring-4 sm:ring-purple-200 sm:ring-opacity-50 sm:ring-offset-4 sm:ring-offset-purple-200 sm:ring-offset-opacity-50"
+            />
           </div>
         </div>
       </section>
-      <section className="bg-gradient-to-b  border-t-2 border-transparent from-yellow-50 to-white border-separate py-8  mx-auto space-x-4 md:space-x-10 font-sans h-96">
-        </section>
+      <section className="bg-gradient-to-b  border-t-2 border-transparent from-yellow-50 to-white border-separate py-8  mx-auto space-x-4 md:space-x-10 font-sans h-96"></section>
     </div>
   );
 };

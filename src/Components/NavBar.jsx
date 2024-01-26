@@ -1,38 +1,41 @@
 import React from "react";
 import { Link } from "react-scroll";
-import { FaTimes } from "react-icons/fa";
-import { CiMenuFries } from "react-icons/ci";
+import {  FaTimesCircle } from "react-icons/fa";
+//import { CiMenuFries } from "react-icons/ci";
+import { TfiAlignJustify } from "react-icons/tfi";
 import logoImage from "../assets/combonilogo.jpg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import LandingPage from "./Landing";
 import Communications from "./Communications";
+import Blog from "./Blog";
 const NavBar = () => {
   const [click, setClick] = React.useState(false);
   const handleClick = () => setClick(!click);
   const content = (
     <div className="bg-gradient-to-b from-purple-50 to-white lg:hidden block absolute top-16 w-full left-0 right-0  transition pt-200">
       <ul className="text-center text-xl p-20">
-        <Link spy={true} smooth={true} to="Home">
+        <NavLink to="/">
           <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate hover:rounded">
             Home
           </li>
-        </Link>
-        <Link spy={true} smooth={true} to="Communications">
+        </NavLink>
+        <NavLink to="/Communications">
           <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate hover:rounded">
             Communications
           </li>
-        </Link>
-        <Link spy={true} smooth={true} to="Events">
+        </NavLink>
+        <Link to="Events">
           <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate hover:rounded">
             Events
           </li>
         </Link>
-        <Link spy={true} smooth={true} to="Blog">
+        <NavLink to="/Blog">
           <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate hover:rounded">
             Blog
           </li>
-        </Link>
-        <Link spy={true} smooth={true} to="Enquiry">
+        </NavLink>
+        <Link to="Enquiry">
           <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate hover:rounded">
             Enquiry
           </li>
@@ -58,28 +61,28 @@ const NavBar = () => {
             <div className="lg:flex md:flex lg: flex-1 items-start justify-start font-semibold hidden">
               <div className="flex-10">
                 <ul className="flex items-start justify-start gap-8 mr-16 text-[18]">
-                  <Link spy={true} smooth={true} to="Home">
+                  <NavLink to="/">
                     <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
                       Home
                     </li>
-                  </Link>
+                  </NavLink>
                   <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
-                    <Link spy={true} smooth={true} to="Communications">
+                    <NavLink to="/Communications">
                       Communications
-                    </Link>
+                    </NavLink>
                   </li>
 
-                  <Link spy={true} smooth={true} to="Events">
+                  <Link to="Events">
                     <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
                       Events
                     </li>
                   </Link>
-                  <Link spy={true} smooth={true} to="Blog">
+                  <NavLink to="/Blog">
                     <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
                       Blog
                     </li>
-                  </Link>
-                  <Link spy={true} smooth={true} to="Enquiry">
+                  </NavLink>
+                  <Link to="Enquiry">
                     <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
                       Inquiry
                     </li>
@@ -99,13 +102,14 @@ const NavBar = () => {
               className="block sm:hidden transition"
               onClick={handleClick}
             >
-              {click ? <FaTimes /> : <CiMenuFries />}
+              {click ? <FaTimesCircle /> : <TfiAlignJustify />}
             </button>
           </div>
         </nav>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/Communications" element={<Communications />} />
+          <Route path="/Blog" element={<Blog/>} />
         </Routes>
       </BrowserRouter>
     </>
