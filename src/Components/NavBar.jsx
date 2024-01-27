@@ -48,7 +48,7 @@ const NavBar = () => {
     <>
       <BrowserRouter>
         <nav className=" bg-gradient-to-b from-white to-purple-100 items-start  fixed top-0 w-full sm:pt-0 sm:mt-0 border-b border-slate-200">
-          <div className=" flex items-start justify-start z-50 text-black lg:py-5 px-20 py-4 mx-4">
+          <div className=" flex items-start justify-start lg:z-50 sm:items-end sm:justify-end text-black lg:py-5 px-20 py-4 mx-4">
             <div className="flex items-center flex-1 sm:pt-0">
               <span>
                 <img
@@ -103,7 +103,7 @@ const NavBar = () => {
               className="block sm:hidden transition"
               onClick={handleClick}
             >
-              {click ? <FaTimesCircle className="text-4xl"/> : <TfiAlignJustify className="text-4xl"/>}
+              {click ? <div className="flex justify-end text-end items-end text-4xl"><FaTimesCircle /></div> : <div className="flex justify-end text-end items-end text-4xl"><TfiAlignJustify /></div>}
             </button>
           </div>
         </nav>
