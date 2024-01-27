@@ -48,7 +48,7 @@ const Inquiry = () => {
         <h1 className="text-center text-2xl font-bold mb-8 pb-18">Inquiry</h1>
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 md:pr-4">
-            <form className="mb-4 shadow-md border-2 border-slate-50">
+            <form className="mb-4 shadow-md border-2 border-slate-50 rounded-lg">
               <div className="mb-4 px-4 pt-4">
                 <label
                   htmlFor="topic"
@@ -138,11 +138,11 @@ const Inquiry = () => {
             </form>
           </div>
 
-          <div className="md:w-1/2 md:pl-4 shadow-md border-2 border-slate-50">
+          <div className="md:w-1/2 md:pl-4 shadow-md border-2 border-slate-50 rounded-lg">
             <h2 className="text-center text-xl font-bold">FAQs</h2>
             <div className="grid grid-cols-1 gap-4 p-4">
               {faqs.map((faq) => (
-                <div key={faq.id} className="bg-white p-4 shadow-md">
+                <div key={faq.id} className="bg-white p-4 shadow-md rounded-lg">
                   <h3
                     className="font-bold mb-2 hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer"
                     onClick={() => setExpandedFAQ(faq.id)}

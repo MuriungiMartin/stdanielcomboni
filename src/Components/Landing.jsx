@@ -36,7 +36,7 @@ const LandingPage = () => {
       imgSrc: "./1.jpg",
     },
     {
-      title: "Prophecy for Beginners and how to start",
+      title: "Benefits of The Eucharist",
       excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
       imgSrc: "./3.jpeg",
     },
@@ -159,12 +159,11 @@ const LandingPage = () => {
     <div className="bg-gradient-to-b from-purple-100 to-white pt-12">
       <section className="flex flex-col justify-around items-center p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10 text-black bg-gradient-to-b from-purple-200 to-purple-100 ">
         <div className="lg:w-1/3 sm:w-fit pt-16">
-          <h1 className="text-6xl">St Daniel Comboni Parish</h1>
+          <h1 className=" font-sans font-bold text-4xl">St Daniel Comboni Catholic Parish</h1>
           <hr className="text-black" />
           <p className="mt-8 text-slate-800 font-sans">
-            We are a Catholic Church in the Archdiocese of Nairobi. We are
-            located in the heart of Embakasi, in Mihabgo. We are a parish in the
-            Archdiocese of Nairobi under the Roman Catholic Church. Come and
+            We are a Catholic Parish in the Archdiocese of Nairobi. We are
+            located in the heart of Embakasi, in Mihango. Come and
             join us in our Sunday Masses and other activities.
           </p>
           <button className="bg-gradient-to-r from-purple-600 to-purple-200 text-white px-4 py-2 rounded mt-8 hover:bg-gradient-to-l hover:from-white hover:to-purple-950">

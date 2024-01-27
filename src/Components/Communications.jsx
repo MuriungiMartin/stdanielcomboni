@@ -38,13 +38,13 @@ const Communications = () => {
       <div className="container mx-auto pt-16 px-8">
         {/* Your recent communications */}
         <div className="  items-start  pt-16">
-          <h2 className="text-2xl font-bold mb-4 lg:pt-16 md:pt-8 sm:pt-16 bg-white p-4 shadow-md">
+          <h2 className="text-2xl font-bold mb-4   bg-white p-4 shadow-md rounded-lg">
             Recent Communications
           </h2>
 
           <div className="grid grid-cols-1  gap-4 pt-4">
             {announcements.map((anouncement) => (
-              <div key={anouncement.id} className="bg-white p-4 shadow-md">
+              <div key={anouncement.id} className="bg-white p-4 shadow-md rounded-lg">
                 <h3 className="font-bold mb-2">{anouncement.title}</h3>
                 <h4 className="">{anouncement.description}</h4>
                 <h5 className="text-slate-600">{anouncement.date}</h5>

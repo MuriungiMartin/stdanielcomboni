@@ -86,13 +86,13 @@ const events = [
        <div className=" bg-gradient-to-b from-purple-100 to-white font-sans">
         <div className="container mx-auto pt-16 px-8">
             <div className="  items-start  pt-16">
-                <h2 className="text-2xl font-bold mb-4 lg:pt-16 md:pt-8 sm:pt-16 bg-white p-4 shadow-md">
+                <h2 className="text-2xl font-bold mb-4 bg-white p-4 shadow-md rounded-lg">
                 Parish Events
                 </h2>
         
                 <div className="grid grid-cols-1  gap-4 pt-4">
                 {events.map((event) => (
-                    <div key={event.id} className="bg-white p-4 shadow-md">
+                    <div key={event.id} className="bg-white p-4 shadow-md rounded-lg">
                     <h3 className="font-bold mb-2">{event.title}</h3>
                     <h4 className="">{event.description}</h4>
                     <h5 className="text-slate-600">{event.date}</h5>
