@@ -103,7 +103,7 @@ const NavBar = () => {
               className="block sm:hidden transition"
               onClick={handleClick}
             >
-              {click ? <FaTimesCircle className="text-4xl"/> : <TfiAlignJustify className="text-6xl"/>}
+              {click ? <FaTimesCircle className="text-4xl"/> : <TfiAlignJustify className="text-4xl"/>}
             </button>
           </div>
         </nav>
