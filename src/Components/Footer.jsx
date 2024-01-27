@@ -71,7 +71,7 @@ const Footer = () => {
         <p className="text-left md:text-center text-sm mt-8 md:mt-0 md:ml-8">
           Developed by{" "}
           <a
-            href="https://martinmuriungi.netlify.app/"
+            href="https://Github.com/MuriungiMartin/"
             className="text-fuchsia-600"
             target="blank"
           >
