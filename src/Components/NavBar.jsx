@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-scroll";
 import {  FaTimesCircle } from "react-icons/fa";
 //import { CiMenuFries } from "react-icons/ci";
 import { TfiAlignJustify } from "react-icons/tfi";
@@ -10,6 +9,7 @@ import LandingPage from "./Landing";
 import Communications from "./Communications";
 import Blog from "./Blog";
 import Events from "./Events";
+import Inquiry from "./Inquiry";
 const NavBar = () => {
   const [click, setClick] = React.useState(false);
   const handleClick = () => setClick(!click);
@@ -36,11 +36,11 @@ const NavBar = () => {
             Blog
           </li>
         </NavLink>
-        <Link to="Enquiry">
+        <NavLink to="/Enquiry">
           <li className="my-4 py-4 border-b border-slate-800 hover:bg-slate hover:rounded">
             Inquiry
           </li>
-        </Link>
+        </NavLink>
       </ul>
     </div>
   );
@@ -83,11 +83,11 @@ const NavBar = () => {
                       Blog
                     </li>
                   </NavLink>
-                  <Link to="Enquiry">
+                  <NavLink to="/Enquiry">
                     <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
                       Inquiry
                     </li>
-                  </Link>
+                  </NavLink>
                 </ul>
               </div>
               <input
@@ -112,6 +112,7 @@ const NavBar = () => {
           <Route path="/Communications" element={<Communications />} />
           <Route path="/Blog" element={<Blog/>} />
           <Route path="/Events" element={<Events />} />
+          <Route path="/Enquiry" element={<Inquiry/>} />
         </Routes>
       </BrowserRouter>
     </>
