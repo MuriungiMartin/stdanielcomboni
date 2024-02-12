@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const Communications = () => {
+const AdminCenter = () => {
     //Get the announcements from the API when page is loaded
     const [announcements, setAnnouncements] = useState([]);
 
@@ -36,4 +36,4 @@ const Communications = () => {
   );
 };
 
-export default Communications;
+export default AdminCenter;

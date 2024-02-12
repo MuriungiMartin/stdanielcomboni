@@ -10,6 +10,8 @@ import Communications from "./Communications";
 import Blog from "./Blog";
 import Events from "./Events";
 import Inquiry from "./Inquiry";
+import AdminLogin from "./adminlogin";
+import AdminCenter from "./admincenter";
 const NavBar = () => {
   const [click, setClick] = React.useState(false);
   const handleClick = () => setClick(!click);
@@ -113,6 +115,8 @@ const NavBar = () => {
           <Route path="/Blog" element={<Blog/>} />
           <Route path="/Events" element={<Events />} />
           <Route path="/Enquiry" element={<Inquiry/>} />
+          <Route path="/AdminLogin" element={<AdminLogin/>} />
+          <Route path="/AdminCenter" element={<AdminCenter/>} />
         </Routes>
       </BrowserRouter>
     </>
