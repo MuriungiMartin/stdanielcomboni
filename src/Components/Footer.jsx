@@ -33,17 +33,17 @@ const Footer = () => {
 
           <ul className="flex items-start justify-start gap-8 text-[18]">
             <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
-              Email: example@example.com
+              Email: stdanniecomboniparish@gmail.com
             </li>
           </ul>
           <ul className="flex items-start justify-start gap-8 text-[18]">
             <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
-              Phone: 123-456-7890
+              Phone: +254704 436 696
             </li>
           </ul>
           <ul className="flex items-start justify-start gap-8 text-[18]">
             <li className="hover:text-fuchsia-600 hover:border-fuchsia-600 cursor-pointer">
-              Address: 123 Main St, City, Country
+              Address: Kibiku Road, Mihango
             </li>
           </ul>
         </div>
