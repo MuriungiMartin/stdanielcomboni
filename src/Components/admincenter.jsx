@@ -1,7 +1,8 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
-
+import { MdAddComment,MdEventAvailable } from "react-icons/md";
+import { FaArrowAltCircleRight,FaArrowAltCircleLeft } from "react-icons/fa";
 const AdminCenter = () => {
   //post the new communication to the API
   function handleSubmit(event) {
@@ -129,7 +130,7 @@ const AdminCenter = () => {
   );
 
   return (
-    <div className=" bg-gradient-to-b from-purple-100 to-white font-sans">
+    <div className=" bg-gradient-to-b from-white to-purple-100  font-sans">
       <div className="container mx-auto pt-16 px-8">
         {/* Your recent communications */}
         <div className="flex flex-col md:flex-row">
@@ -140,7 +141,7 @@ const AdminCenter = () => {
             >
               <div className="px-4 pt-4">
                 <h1 className="flex justify-center items-center text-2xl font-bold mb-4  bg-transparent p-4 shadow-md rounded-lg">
-                  Add New Communication
+                  <MdAddComment/> Communication
                 </h1>
               </div>
               <div className="flex justify-start items-start mb-4 px-4 pt-4">
@@ -167,12 +168,12 @@ const AdminCenter = () => {
                   className="w-full border border-gray-300 rounded-md py-2 px-3"
                 />
               </div>
-              <div className="flex justify-start items-start mb-4 px-4 pt-4">
+              <div className="flex justify-center items-center mb-4 px-4 pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-tr from-fuchsia-600 to-fuchsia-100 text-white px-4 py-2 rounded-md"
+                  className="w-full bg-gradient-to-tr flex justify-center items-center from-fuchsia-600 to-fuchsia-100 text-white px-4 py-2 rounded-md"
                 >
-                  Add
+                  <MdAddComment  className="text-2xl"/>
                 </button>
               </div>
             </form>
@@ -195,7 +196,7 @@ const AdminCenter = () => {
             >
               <div className="px-4 pt-4">
                 <h1 className="flex justify-center items-center text-2xl font-bold mb-4  bg-transparent p-4 shadow-md rounded-lg">
-                  Add New Event
+                  <MdEventAvailable /> Event
                 </h1>
               </div>
               <div className="flex justify-start items-start mb-4 px-4 pt-4">
@@ -238,24 +239,24 @@ const AdminCenter = () => {
                   rows={10}
                 ></textarea>
               </div>
-              <div className="flex justify-start items-start mb-4 px-4 pt-4">
+              <div className="flex justify-center items-center mb-4 px-4 pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-tr from-fuchsia-600 to-fuchsia-100 text-white px-4 py-2 rounded-md"
+                  className="w-full bg-gradient-to-tr flex justify-center items-center from-fuchsia-600 to-fuchsia-100 text-white px-4 py-2 rounded-md"
                 >
-                  Add
+                  <MdEventAvailable className="text-2xl"/>
                 </button>
               </div>
             </form>
           </div>
         </div>
       </div>
-      <section className="flex flex-wrap items-center gap-16 overflow-x-hidden grid-cols-2 sm:grid-cols-4 lg:grid-cols-6  text-black p-8 justify-center">
+      {/* <section className="flex flex-wrap items-center gap-16 overflow-x-hidden grid-cols-2 sm:grid-cols-4 lg:grid-cols-6  text-black p-8 justify-center">
         <div>
           <button className="text-2xl font-semibold">New Blog Post</button>
         </div>
-      </section>
-      <div>
+      </section> */}
+      <div className="shadow-lg border-purple-100 border-2 rounded-lg bg-gradient-to-b from-white to-purple-100">
         <div className="flex flex-wrap items-center  text-black p-8 justify-center">
           <button className="text-2xl font-semibold">Inquiries</button>
         </div>
@@ -269,11 +270,10 @@ const AdminCenter = () => {
                 <h2 className="text-xl font-bold pl-8 pb-4">{inquiry.topic}</h2>
                 {expandedInquiries.includes(inquiry.id) ? (
                   <div className="container pl-8">
-                    <p className="text-lg">{inquiry.church_group}</p> 
+                    <p className="text-lg">{inquiry.church_group}</p>
                     <p className="text-lg">{inquiry.Name}</p>
                     <p className="text-lg">{inquiry.question}</p>
                     <p className="text-lg">{inquiry.phone}</p>
-                    
                   </div>
                 ) : (
                   <div className="container pl-8 pb-4">
@@ -281,19 +281,18 @@ const AdminCenter = () => {
                   </div>
                 )}
                 <div className="flex justify-between">
-                  
-                <button className="pl-8 text-fuchsia-600" onClick={() => toggleInquiry(inquiry.id)}>
-                  {expandedInquiries.includes(inquiry.id)
-                    ? "Show Less"
-                    : "Details"}
-                </button>
-                      <button
-                        className="bg-white shadow-md text-black font-bold py-2 px-4 rounded-md"
-                     
-                      >
-                        Reply
-                      </button>
-                      </div>
+                  <button
+                    className="pl-8 text-fuchsia-600"
+                    onClick={() => toggleInquiry(inquiry.id)}
+                  >
+                    {expandedInquiries.includes(inquiry.id)
+                      ? "Show Less"
+                      : "Details"}
+                  </button>
+                  <button className="bg-white shadow-md text-black font-bold py-2 px-4 rounded-md">
+                    Reply
+                  </button>
+                </div>
               </div>
             ))}
           </div>
@@ -305,7 +304,7 @@ const AdminCenter = () => {
                     className="bg-gradient-to-br  from-purple-600  to-purple-200 hover:bg-gradient-to-bl hover:from-purple-200  hover:to-purple-600 text-white font-bold py-2 px-4 rounded"
                     onClick={() => setCurrentIndex(currentIndex - 3)}
                   >
-                    Previous
+                    <FaArrowAltCircleLeft className="text-2xl"/>
                   </button>
                 )}
                 {currentIndex < sortedInquiries.length - 3 && (
@@ -313,12 +312,12 @@ const AdminCenter = () => {
                     className="bg-gradient-to-br  from-purple-600 to-purple-200 hover:from-purple-200  hover:to-purple-600 text-white font-bold py-2 px-4 rounded"
                     onClick={() => setCurrentIndex(currentIndex + 3)}
                   >
-                    Next
+                    <FaArrowAltCircleRight className="text-2xl"/>
                   </button>
                 )}
               </div>
             )}
-            </div>
+          </div>
         </div>
       </div>
     </div>

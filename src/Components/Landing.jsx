@@ -1,33 +1,37 @@
-//import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const LandingPage = () => {
-  // const [isLoaded, setIsLoaded] = useState(false);
 
-  // useEffect(() => {
-  //   setIsLoaded(true);
-  // }, []);
 
-  //const images = ["1.jpg", "2.jpeg", "3.jpeg"]; // Replace with your own images
-  // const events = ["Event 1", "Event 2", "Event 3"]; // Replace with your own events
-  const events = [
-    {
-      date: "16 FEB 2024",
-      time: "THU 21:30",
-      title: "Lenten Prayer Vigil",
-      description:
-        "Join us for a special Lenten Prayer Vigil as we seek spiritual growth and reflection during the season of Lent.",
-      image: "./1.jpg",
-    },
-    {
-      date: "24 MAR 2024",
-      time: "TUE 18:00",
-      title: "Parish Feast Day Celebration",
-      description:
-        "Celebrate our parish feast day with a joyous gathering. Join in prayer, fellowship, and festivities.",
-      image: "./2.jpeg",
-    },
-    // Add more events as needed
-  ];
+
+  // const events = [
+  //   {
+  //     date: "16 FEB 2024",
+  //     time: "THU 21:30",
+  //     title: "Lenten Prayer Vigil",
+  //     description:
+  //       "Join us for a special Lenten Prayer Vigil as we seek spiritual growth and reflection during the season of Lent.",
+  //     image: "./1.jpg",
+  //   },
+  //   {
+  //     date: "24 MAR 2024",
+  //     time: "TUE 18:00",
+  //     title: "Parish Feast Day Celebration",
+  //     description:
+  //       "Celebrate our parish feast day with a joyous gathering. Join in prayer, fellowship, and festivities.",
+  //     image: "./2.jpeg",
+  //   },
+  //   // Add more events as needed
+  // ];
+
+  //fetch events from the server
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/events")
+      .then((response) => response.json())
+      .then((data) => setEvents(data));
+  }, []);
+
 
   const blogs = [
     {
@@ -190,9 +194,9 @@ const LandingPage = () => {
 
       <section className="bg-white text-black p-4 space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 lg:space-x-10 lg:p-10">
         <div className="flex flex-col space-y-4 p-4 sm:p-0">
-          {events.map((event, index) => (
+          {events.slice(0, 2).map((event) => (
             <div
-              key={index}
+              key={event.id}
               className="flex flex-col sm:flex-row items-stretch"
             >
               <div className="w-full sm:w-1/4 text-center sm:text-right px-4 pt-8">
@@ -203,7 +207,7 @@ const LandingPage = () => {
                 <div>{event.time}</div>
               </div>
               <div className="w-full sm:w-3/4 p-4 bg-white border rounded-md shadow-2xl">
-                <h3 className="text-2xl font-bold mb-4 pl-4">{event.title}</h3>
+                <h3 className="text-2xl font-bold mb-4 pl-4">{event.Title}</h3>
                 <p className="pl-4">{event.description}</p>
                 <div className="pl-4">
                   <button className="bg-gradient-to-r from-purple-600 to-purple-200 text-white px-4 py-2 rounded mt-8 hover:bg-gradient-to-l hover:from-white hover:to-purple-950">
