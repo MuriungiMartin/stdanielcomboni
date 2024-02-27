@@ -1,5 +1,6 @@
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState, useEffect } from "react";
 
 const AdminCenter = () => {
   //post the new communication to the API
@@ -91,6 +92,41 @@ const AdminCenter = () => {
         }, 3000);
       });
   }
+  //fetch inquiries from the API and assign data to the inquiries array in the state
+  const [inquiries, setInquiries] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/inquiries")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setInquiries(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, []);
+
+  //Sort inquiries in descending order by id
+  const sortedInquiries = [...inquiries].sort((a, b) => b.id - a.id);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [expandedInquiries, setExpandedInquiries] = useState([]);
+
+  const toggleInquiry = (id) => {
+    const isExpanded = expandedInquiries.includes(id);
+    if (isExpanded) {
+      setExpandedInquiries(
+        expandedInquiries.filter((inquiryId) => inquiryId !== id)
+      );
+    } else {
+      setExpandedInquiries([...expandedInquiries, id]);
+    }
+  };
+  // Get the current set of inquiries to display
+  const displayedInquiries = sortedInquiries.slice(
+    currentIndex,
+    currentIndex + 3
+  );
 
   return (
     <div className=" bg-gradient-to-b from-purple-100 to-white font-sans">
@@ -212,6 +248,77 @@ const AdminCenter = () => {
               </div>
             </form>
           </div>
+        </div>
+      </div>
+      <section className="flex flex-wrap items-center gap-16 overflow-x-hidden grid-cols-2 sm:grid-cols-4 lg:grid-cols-6  text-black p-8 justify-center">
+        <div>
+          <button className="text-2xl font-semibold">New Blog Post</button>
+        </div>
+      </section>
+      <div>
+        <div className="flex flex-wrap items-center  text-black p-8 justify-center">
+          <button className="text-2xl font-semibold">Inquiries</button>
+        </div>
+        <div>
+          <div className="rounded-xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-8">
+            {displayedInquiries.map((inquiry) => (
+              <div
+                key={inquiry.id}
+                className="bg-white p-4 rounded-xl shadow-md mx-4 mb-4"
+              >
+                <h2 className="text-xl font-bold pl-8 pb-4">{inquiry.topic}</h2>
+                {expandedInquiries.includes(inquiry.id) ? (
+                  <div className="container pl-8">
+                    <p className="text-lg">{inquiry.church_group}</p> 
+                    <p className="text-lg">{inquiry.Name}</p>
+                    <p className="text-lg">{inquiry.question}</p>
+                    <p className="text-lg">{inquiry.phone}</p>
+                    
+                  </div>
+                ) : (
+                  <div className="container pl-8 pb-4">
+                    <p className="text-lg">{inquiry.church_group}</p>
+                  </div>
+                )}
+                <div className="flex justify-between">
+                  
+                <button className="pl-8 text-fuchsia-600" onClick={() => toggleInquiry(inquiry.id)}>
+                  {expandedInquiries.includes(inquiry.id)
+                    ? "Show Less"
+                    : "Details"}
+                </button>
+                      <button
+                        className="bg-white shadow-md text-black font-bold py-2 px-4 rounded-md"
+                     
+                      >
+                        Reply
+                      </button>
+                      </div>
+              </div>
+            ))}
+          </div>
+          <div className="p-4">
+            {sortedInquiries.length > 0 && (
+              <div className="flex justify-between mb-4">
+                {currentIndex > 0 && (
+                  <button
+                    className="bg-gradient-to-br  from-purple-600  to-purple-200 hover:bg-gradient-to-bl hover:from-purple-200  hover:to-purple-600 text-white font-bold py-2 px-4 rounded"
+                    onClick={() => setCurrentIndex(currentIndex - 3)}
+                  >
+                    Previous
+                  </button>
+                )}
+                {currentIndex < sortedInquiries.length - 3 && (
+                  <button
+                    className="bg-gradient-to-br  from-purple-600 to-purple-200 hover:from-purple-200  hover:to-purple-600 text-white font-bold py-2 px-4 rounded"
+                    onClick={() => setCurrentIndex(currentIndex + 3)}
+                  >
+                    Next
+                  </button>
+                )}
+              </div>
+            )}
+            </div>
         </div>
       </div>
     </div>
